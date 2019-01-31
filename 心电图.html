@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-2.1.4.js"></script>
+    <style> 
+    .bossOne{
+        width: 1200px;
+        height:auto;
+        overflow: hidden;
+        background-image: url(./bo3.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin: 50px auto;
+    }
+    .boss{
+        width: 1200px;
+        height:246px;
+        background-image: url(./bo.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+    .boss_son{
+        z-index: 99;
+        position: absolute;
+        opacity: 1 !important;
+        left: 0;
+        top: 0;
+        width: 100px;
+        height: 246px;
+        background: url(./bo1.png)  0/1200px auto repeat-x;
+        background-position: 0px 0px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="bossOne">
+        <div class="boss">
+            <div class="boss_son">
+
+            </div>
+        </div>
+    </div>
+    <script>
+    
+    function xian(){
+         $(".boss_son").animate({left:'1200px',backgroundPositionX:'-1200px'},2000);
+         $(".boss_son").animate({left:'0px',backgroundPositionX:'0px'},2000);
+    }
+    xian()
+    setInterval('xian()',4000)
+    setTimeout("alertV()",200); 
+</script>
+</body>
+</html>
